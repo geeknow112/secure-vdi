@@ -69,7 +69,7 @@ export ANALYST_USERNAME=analyst  # WorkSpacesユーザー名
 ```hcl
 aws_region = "ap-northeast-1"
 admin_ips  = ["YOUR.IP.ADDRESS/32"]
-directory_password = "SecurePassword123!"
+directory_password = "CHANGE_THIS_PASSWORD"
 ```
 
 ## 💰 コスト効率

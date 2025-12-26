@@ -10,7 +10,7 @@ availability_zones = ["ap-northeast-1a", "ap-northeast-1c"]
 
 # Security Configuration
 admin_ips = ["YOUR.IP.ADDRESS/32"]  # Replace with your actual IP address
-directory_password = "SecurePassword123!"  # Change this to a strong password
+directory_password = "CHANGE_THIS_PASSWORD"  # Change this to a strong password (min 8 chars)
 
 # WorkSpaces Configuration
 analyst_username = "security-analyst"

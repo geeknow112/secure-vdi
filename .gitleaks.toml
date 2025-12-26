@@ -1,0 +1,50 @@
+# Gitleaks configuration for secure-vdi project
+
+[extend]
+# Use default rules
+useDefault = true
+
+[[rules]]
+description = "AWS Access Key ID"
+id = "aws-access-key-id"
+regex = '''AKIA[0-9A-Z]{16}'''
+tags = ["key", "AWS"]
+
+[[rules]]
+description = "AWS Secret Access Key"
+id = "aws-secret-access-key"
+regex = '''[A-Za-z0-9/+=]{40}'''
+tags = ["key", "AWS"]
+
+[[rules]]
+description = "Terraform tfvars files"
+id = "terraform-tfvars"
+path = '''.*\.tfvars$'''
+tags = ["terraform", "config"]
+
+[[rules]]
+description = "Private SSH keys"
+id = "ssh-private-key"
+regex = '''-----BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----'''
+tags = ["key", "SSH"]
+
+[[rules]]
+description = "Generic passwords in code"
+id = "generic-password"
+regex = '''(?i)(password|passwd|pwd)\s*[:=]\s*["'][^"']{8,}["']'''
+tags = ["password"]
+
+[allowlist]
+description = "Allowlist for example files and documentation"
+paths = [
+    '''.*\.example$''',
+    '''.*\.md$''',
+    '''.*\.txt$''',
+]
+
+# Allow placeholder passwords in example files
+regexes = [
+    '''CHANGE_THIS_PASSWORD''',
+    '''YOUR\.IP\.ADDRESS''',
+    '''SecurePassword123!''',  # Only in documentation
+]
