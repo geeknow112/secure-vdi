@@ -1,0 +1,35 @@
+# AWS Configuration
+aws_region = "ap-northeast-1"
+
+# Project Configuration
+project_name = "secure-vdi"
+
+# Network Configuration
+vpc_cidr = "10.100.0.0/16"
+availability_zones = ["ap-northeast-1a", "ap-northeast-1c"]
+
+# Security Configuration
+admin_ips = ["YOUR.IP.ADDRESS/32"]  # Replace with your actual IP address
+directory_password = "SecurePassword123!"  # Change this to a strong password
+
+# WorkSpaces Configuration
+analyst_username = "security-analyst"
+workspace_bundle = "wsb-bh8rsxt14"  # Performance bundle
+workspace_compute_type = "PERFORMANCE"
+workspace_running_mode = "MANUAL"
+
+# Monitoring Configuration
+enable_flow_logs = true
+enable_cloudtrail = true
+
+# Auto-cleanup Configuration (0 to disable)
+auto_cleanup_hours = 72
+
+# Bundle Options:
+# wsb-clj85qzj1 - Value ($25/month)
+# wsb-3t36q0xfc - Standard ($35/month)  
+# wsb-bh8rsxt14 - Performance ($68/month)
+# wsb-1pzkp0bx4 - PowerPro ($112/month)
+
+# Compute Type Options:
+# VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO
